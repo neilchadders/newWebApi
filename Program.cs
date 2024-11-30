@@ -12,6 +12,7 @@ builder.Services.AddCors((options) =>
         options.AddPolicy("DevCors", (corsBuilder) =>
             {
                 corsBuilder.WithOrigins("http://localhost:4200", "http://localhost:3000", "http://localhost:8000")
+                // 4200 is for Angular, 3000 is for React, 8000 is for Vue
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials();
