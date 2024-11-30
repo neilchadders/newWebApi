@@ -1,4 +1,4 @@
-namespace newWebAPI
+namespace newWebAPI.Models
 {
     public partial class UserJobInfo
     {
