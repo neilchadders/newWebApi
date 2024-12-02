@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
 namespace newWebAPI.Controllers
+
 {
     public class AuthController : ControllerBase
     {

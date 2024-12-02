@@ -76,3 +76,4 @@ C:\Users\neilc\git-clones\newWebAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCo
 C:\Users\neilc\git-clones\newWebAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\neilc\git-clones\newWebAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\neilc\git-clones\newWebAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\neilc\git-clones\newWebAPI\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
