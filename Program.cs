@@ -30,30 +30,21 @@ builder.Services.AddCors((options) =>
             });
     });
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-
-
 string? tokenKeyString = builder.Configuration.GetSection("AppSettings:TokenKey").Value;
-
-SymmetricSecurityKey tokenKey = new SymmetricSecurityKey(
-        Encoding.UTF8.GetBytes(
-            tokenKeyString != null ? tokenKeyString : ""
-        )
-    );
-
-TokenValidationParameters tokenValidationParameters = new TokenValidationParameters()
-{
-    IssuerSigningKey = tokenKey,
-    ValidateIssuerSigningKey = true,
-    ValidateIssuer = false,
-    ValidateAudience = false
-};
+Console.WriteLine(tokenKeyString);
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = tokenValidationParameters;
-    });
+    .AddJwtBearer(options => {
+        options.TokenValidationParameters = new TokenValidationParameters() 
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+                    tokenKeyString != null ? tokenKeyString : ""
+                )),
+                ValidateIssuer = false,
+                ValidateAudience = false
+            };
+        });
 
 var app = builder.Build();
 
